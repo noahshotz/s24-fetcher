@@ -10,11 +10,12 @@ load_dotenv()
 APP_ID = os.environ.get('APP_ID')
 APP_KEY = os.environ.get('APP_KEY')
 BASE_URL = "https://api.s24.com/v3/"
+TYPE = "products"
 
 
 def fetch_page(page_number, page_size=40):
     """Fetch a single page of products from the API"""
-    url = f"{BASE_URL}{APP_ID}/products"
+    url = f"{BASE_URL}{APP_ID}/{TYPE}"
 
     # Basic auth using APP_ID and APP_KEY https://developer.s24.com/api/
     auth = (APP_ID, APP_KEY)
