@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This is a very basic python script to export data from the shopping24 API into a JSON file.
+A lightweight Python script to export data from the Shopping24 API into a JSONL (JSON Lines) file.
 
 ## Getting started
 
 ### Set enviroment variables
 
-The template `.env` file defines the enviroment variables that need to be set. Start by renaming it from `.template.env` to `.env` and insert your `APP_ID` and `APP_KEY`.
+The template `.env` file contains the environment variables needed. Rename `.template.env` to `.env` and add your `APP_ID` and `APP_KEY` credentials.
 
 ### Install packages
 
@@ -24,8 +24,18 @@ pip install -r requirements.txt
 python main.py
 ```
 
-You should now see the total amount of entries found, the amount of pages and a progess count.
+You'll see information about the total number of entries found, the number of pages, and a progress indicator.
 
-## Specifing target data
+## Configuration Options
 
-Using `TYPE` you can define the data that should be fetched using the API. Accepted values are `products`, `categories`, `brands` and `shops`.
+### Target Data Type
+
+Use the `TYPE` variable in the script to specify which data to fetch from the API. Supported values:
+- `products`
+- `categories`
+- `brands`
+- `shops`.
+
+### Output Location
+
+By default, data is exported to `data/products.jsonl`. You can change this by modifying the `output_file` parameter in the `fetch_all_products()` function call.
